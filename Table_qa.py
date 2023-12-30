@@ -20,7 +20,7 @@ import pandas as pd
 class language_ai :
 
     def process(self):
-        st.set_page_config(page_title='TQA Project By Praveen', layout="wide")
+        st.set_page_config(page_title='TQA Project By Viswa', layout="wide")
 
 
 
@@ -30,7 +30,7 @@ class language_ai :
         col1, col2, col3 = st.columns([1, 7, 1])
 
         col2.markdown(
-            "<h1 style='font-size: 80px;'><span style='color: cyan;'>Table </span> <span style='color: white;'>Questioning </span><span style='color: white;'>Answering </span><span style='color: cyan;'> System</span> </h1>",
+            "<h1 style='font-size: 50px;'><span style='color: cyan;'>Table </span> <span style='color: white;'>Questioning </span><span style='color: white;'>Answering </span><span style='color: cyan;'> System</span> </h1>",
             unsafe_allow_html=True)
         col2.write("")
         col2.write("")
@@ -38,17 +38,18 @@ class language_ai :
         col2.write("")
 
         API_URL = "https://api-inference.huggingface.co/models/microsoft/tapex-large-finetuned-wtq"
-        headers = {"Authorization": "Bearer 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"}
+        headers = {"Authorization": "Bearer hf_fTIBTLGbeywooBbpjYJSyDZfCLiDqlFFF"}
 
         def query(payload):
             response = requests.post(API_URL, headers=headers, json=payload)
             return response.json()
 
         data = {
-            "name": ["praveen", "thambey", "shabarinath", 'viswanathan', 'anna lakshmi', 'pavan', 'vigesh',
-                     'vengatesh', 'nivas'],
+            "name": ["praveen", "thambey", "shalini", 'viswanathan', 'vasanthi', 'pavan', 'vigesh',
+                     'arshath', 'gowthami'],
+            "gender":["M", "M", "F", "M", "F", "M", "M", "M", "F"],
             "age": ["21", "30", "38", '21', '45', '25', '25', '25', '26'],
-            "height": ["170", "160", "159", '168', '159', '168', '176', '180', '160'],
+            "height": ["170", "160", "159", '181', '159', '168', '176', '150', '160'],
             "skills": [
                 "NLP , Python , Ml", "Ml", "Python", "ML", "DL", "Ml", "Python", "ML", "DL"
             ]
